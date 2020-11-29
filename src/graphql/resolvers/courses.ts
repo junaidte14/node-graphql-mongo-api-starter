@@ -29,7 +29,7 @@ export default {
     },
     async deleteCourse(parent, { id }, context, info) {
       try {
-        return Course.findOneAndRemove(id);
+        return Course.findOneAndDelete({_id: id});
       } catch (err) {
         throw new Error(err);
       }

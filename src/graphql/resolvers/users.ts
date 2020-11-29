@@ -29,7 +29,7 @@ export default {
     },
     async deleteUser(parent, { id }, context, info) {
       try {
-        return User.findOneAndRemove(id);
+        return User.findOneAndDelete({_id: id});
       } catch (err) {
         throw new Error(err);
       }
